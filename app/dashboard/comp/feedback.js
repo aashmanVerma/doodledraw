@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Textarea } from "@/components/ui/textarea"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { submitFeedback } from "@/supabase";
 
 
