@@ -1,7 +1,20 @@
+"use client";
+import { useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
+import { useEffect } from "react";
 
 export default function Home() {
+
+  const user = useUser();
+  const router = useRouter();
+
+  useEffect(()=>{
+    if (user.isSignedIn) {
+      router.push("/dashboard");
+    }
+  }, [user.isSignedIn])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-10 md:p-24">
